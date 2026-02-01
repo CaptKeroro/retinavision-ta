@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg-dark: #050505;       
+    --bg-card: #121212;       
+    --accent: #00FFAA;
+}
+
+/* BACKGROUND NAFAZ */
+@keyframes breathe {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.stApp {
+    background: linear-gradient(-45deg, #050505, #0a0f0d, #000000);
+    background-size: 200% 200%;
+    animation: breathe 10s ease infinite;
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+}
+
+[data-testid="stSidebar"] {
+    background-color: #050505;
+    border-right: 1px solid #222;
+}
+
+h1, h2, h3 {
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+/* KARTU HASIL */
+.metric-card {
+    background: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.stButton>button {
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    transition: all 0.2s;
+    background: #333; 
+    color: #fff !important;
+}
+
+.stButton>button:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
+
+/* --- ANIMASI BAR (WAJIB DARI 0) --- */
+@keyframes growBar {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+}
+
+.bar-fill {
+    width: 0%; /* Start dari 0 */
+    height: 100%;
+    border-radius: 4px;
+    animation: growBar 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* --- TEXT SHIMMER --- */
+@keyframes textShine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.shimmer-text {
+    background-size: 200% auto !important;
+    color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: textShine 3s linear infinite;
+}
+
+/* TABS */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 5px;
+    background-color: #0F0F0F;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+.stTabs [aria-selected="true"] {
+    background-color: #1F1F1F;
+    color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 600px) {
+    .block-container { padding-top: 1.5rem !important; }
+    h1 { font-size: 1.8rem !important; }
+    .metric-card { padding: 15px; }
+}
