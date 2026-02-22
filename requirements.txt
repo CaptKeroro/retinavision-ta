@@ -9,3 +9,4 @@ opencv-python-headless
 plotly
 matplotlib
 fpdf
+gdown
