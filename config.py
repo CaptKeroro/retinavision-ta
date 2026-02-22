@@ -1,10 +1,17 @@
 import os
+import gdown
 from pathlib import Path
 
 # --- PATH SETUP ---
 BASE_DIR = Path(__file__).parent
 # Auto-detect nama file model di folder yang sama
 MODEL_PATH = BASE_DIR / "best_model_swin.pth"
+
+if not os.path.exists(MODEL_PATH):
+    print("Mengunduh bobot model dari Google Drive...")
+    file_id = '1_wkEB-Fs_xt9QlZtsrp1FavEbvDvNxLE'
+    url = f'https://drive.google.com/uc?id={file_id}'
+    gdown.download(url, str(MODEL_PATH), quiet=False)
 
 # --- MODEL CONFIG ---
 MODEL_NAME = 'swin_base_patch4_window7_224'
